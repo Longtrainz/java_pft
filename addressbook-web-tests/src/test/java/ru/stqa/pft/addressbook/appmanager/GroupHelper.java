@@ -58,9 +58,22 @@ public class GroupHelper extends HelperBase {
     public void submitContactModification() {
         click(By.xpath("//div[@id='content']/form[1]/input[22]"));
     }
+
+    public void deleteSelectedContacts() {
+        click(By.xpath("//div/div[4]/form[2]/div[2]/input"));
+    }
+
+    public void submitContactDeletion() {
+        wd.switchTo().alert().accept();
+    }
 }
 //div/div[4]/form[2]/table/tbody/tr[2]/td[1]/input - выбрать контакт
 
 //table[@id='maintable']/tbody/tr[2]/td[8]/a/img - нажать edit
 
 //div[@id='content']/form[1]/input[22] -update изменений контакта
+
+//div/div[4]/form[2]/div[2]/input - кнопка delete для контакта
+
+//Для закрытия диалогового окна (alert), которое появляется при удалении контакта, нужно использовать такую команду драйвера:
+//wd.switchTo().alert().accept();
