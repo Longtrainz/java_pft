@@ -53,4 +53,18 @@ public class ContactHelper extends HelperBase {
     public void submitContactDeletion() {
         wd.switchTo().alert().accept();
     }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void createContact(ContactData contact) {
+        gotoAddNewPage();
+        fillContactForm(new ContactData("Vladyslav", "Bukach", "777-777", "vladyslav.bukach@gmail.com", "test1"), true);
+        submitContactCreation();
+    }
+
+    public void gotoAddNewPage() {
+        click(By.linkText("add new"));
+    }
 }
