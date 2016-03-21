@@ -59,6 +59,10 @@ public class GroupHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
 
     }
+
+    public int getGroupCount() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
 }
 //div/div[4]/form[2]/table/tbody/tr[2]/td[1]/input - выбрать контакт
 
